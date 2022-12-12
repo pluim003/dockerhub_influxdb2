@@ -1,0 +1,13 @@
+version: '2'
+services:
+  pihole_influxdb2:
+    build: .
+    container_name: pihole_influxdb2
+    environment:
+      - INFLUXDB_V2_URL=127.0.0.1:8086
+      - INFLUXDB_V2_TOKEN=<token>
+      - INFLUXDB_V2_ORG=my-org
+      - INFLUXDB_BUCKET=dockerhub
+      - DELAY=600
+      - DOCKERHUB_IMAGES=pluim003/dockerhub_influx,pluim003/pihole_unbound
+      - DOCKERHUB_USERS=pluim003
